@@ -14,7 +14,7 @@
 #include <math.h>
 
 
-unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHeader *pblock)
+unsigned int GetNextTargetRequired(const CBlockIndex* pindexLast, const CBlockHeader *pblock, bool fProofOfStake)
 {
 
     /* current difficulty formula, darknet - DarkGravity v3, written by Evan Duffield - evan@dashpay.io */

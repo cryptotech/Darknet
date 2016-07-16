@@ -109,6 +109,11 @@ public:
         nTargetTimespan = 1 * 60; // DarkNet: 1 day
         nTargetSpacing = 1 * 60; // DarkNet: 1 minute
 
+        nStakeTimestampMask = 0xf;
+        nMaxReorganizationDepth = 500;
+        posLimit = uint256("00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
+        nLastPOWBlock = 259200;
+
         /**
          * Build the genesis block. Note that the output of the genesis coinbase cannot
          * be spent as it did not originally exist in the database.

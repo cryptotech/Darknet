@@ -41,7 +41,6 @@ public:
 
         MAX_BASE58_TYPES
     };
-
     const uint256& HashGenesisBlock() const { return hashGenesisBlock; }
     const MessageStartChars& MessageStart() const { return pchMessageStart; }
     const std::vector<unsigned char>& AlertKey() const { return vAlertPubKey; }
@@ -86,9 +85,14 @@ public:
     std::string MasternodePaymentPubKey() const { return strMasternodePaymentsPubKey; }
     int64_t StartMasternodePayments() const { return nStartMasternodePayments; }
     CBaseChainParams::Network NetworkID() const { return networkID; }
+
+    int nLastPOWBlock;
+    uint256 posLimit;
+    int nMaxReorganizationDepth;
+    int nStakeTimestampMask;
+
 protected:
     CChainParams() {}
-
     uint256 hashGenesisBlock;
     MessageStartChars pchMessageStart;
     //! Raw pub key bytes for the broadcast alert signing key.
