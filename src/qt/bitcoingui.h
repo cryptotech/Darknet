@@ -107,6 +107,8 @@ private:
     QAction *aboutQtAction;
     QAction *openInfoAction;
     QAction *openRPCConsoleAction;
+		QAction *themeDefaultAction;
+		QAction *themeCustomAction;
     QAction *openNetworkAction;
     QAction *openPeersAction;
     QAction *openRepairAction;
@@ -124,6 +126,14 @@ private:
     int prevBlocks;
     int spinnerFrame;
 
+	/* Themes support */
+    QString selectedTheme;
+    QStringList themesList;
+    // Path to directory where all themes are (usable for some common images?...)
+    QString themesDir;
+    QAction *customActions[100];
+    /* Themes support */
+	
     /** Create the main UI actions. */
     void createActions(const NetworkStyle *networkStyle);
     /** Create the menu bar and sub-menus. */
@@ -197,6 +207,11 @@ private slots:
 
     /** Show open dialog */
     void openClicked();
+	/** Load external QSS stylesheet */
+    void changeTheme(QString theme);
+    void loadTheme(QString theme);
+    void listThemes(QStringList& themes);
+    void keyPressEvent(QKeyEvent * e);
 #endif // ENABLE_WALLET
     /** Show configuration dialog */
     void optionsClicked();
