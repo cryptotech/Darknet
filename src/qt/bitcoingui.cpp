@@ -55,6 +55,7 @@
 #include <QFile>
 #include <QTextStream>
 #include <QSignalMapper>
+#include <QDir>
 
 
 #if QT_VERSION < 0x050000
